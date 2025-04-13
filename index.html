@@ -1,0 +1,743 @@
+<!-- #region head -->
+<!DOCTYPE html>
+<html lang="en" class="page">
+  <!-- styles for .page written in index.scss -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rent car</title>
+    <style>
+      /* Critical CSS */
+      body {
+        background-color: #121214;
+        margin: 0;
+      }
+    </style>
+    <link rel="icon" href="/public/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="./src/styles/index/index.css" />
+    <script src="./src/scripts/index.js" defer></script>
+  </head>
+  <!-- #endregion head -->
+  <body class="page__body" id="body">
+    <!-- elements with id attribute is usually somehow controlled with JS -->
+    <header class="header">
+      <div
+        class="container container--header container--narrow-ontablet header__container"
+      >
+        <div class="header__left-container">
+          <a href="#" class="logo">
+            <img
+              src="../public/img/logo.png"
+              alt="flexicar logo"
+              class="logo__img"
+            />
+          </a>
+
+          <nav class="nav header__nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#" class="nav__link">Book</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Help</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">FAQ</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Rental Policies</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Blog&Guides</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="header__right-container">
+          <button class="header__language">
+            EN
+            <span>&nbsp;</span>
+            <div class="icon">
+              <img src="/public/icons/arrow-down.svg" alt="arrow down icon" />
+            </div>
+          </button>
+
+          <a href="tel:+1234567890" class="header__phone">
+            <div class="icon">
+              <img src="/public/icons/phone.svg" alt="phone icon" />
+            </div>
+            <span>&nbsp;</span>
+            +123 456 7890
+          </a>
+
+          <button class="icon icon--button header__burger" id="open-menu">
+            <img
+              src="/public/icons/burger-menu.svg"
+              alt="burger menu icon"
+              class="icon__img"
+            />
+          </button>
+
+          <button class="header__signin">
+            <div class="icon">
+              <img src="/public/icons/signin.svg" alt="sign in icon" />
+            </div>
+            <span>&nbsp;</span>
+            Sign in
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <aside class="menu page__menu page__menu--hidden" id="menu">
+      <header class="header menu__header">
+        <div
+          class="container container--header container--narrow-ontablet header__container"
+        >
+          <a href="#" class="logo">
+            <img
+              src="../public/img/logo.png"
+              alt="flexicar logo"
+              class="logo__img"
+            />
+          </a>
+          <button class="icon icon--button header__burger" id="close-menu">
+            <img
+              src="/public/icons/x-close.svg"
+              alt="close menu icon"
+              class="icon__img"
+            />
+          </button>
+        </div>
+      </header>
+
+      <div class="container menu__content">
+        <nav class="nav menu__nav">
+          <ul class="nav__list nav__list--menu">
+            <li class="nav__item">
+              <a href="#" class="nav__link">Book</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Help</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">FAQ</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Rental Policies</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Blog&Guides</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="menu__bottom">
+          <button class="button button--light menu__button">
+            Sign In
+            <img src="/public/icons/sign-in-white.svg" alt="sign in icon" />
+          </button>
+          <div class="menu__tel-and-lang">
+            <a href="tel:+1234567890" class="menu__phone">
+              <div class="icon">
+                <img src="/public/icons/phone.svg" alt="phone icon" />
+              </div>
+              +123 456 7890
+            </a>
+
+            <button class="menu__language">
+              EN
+              <span>&nbsp;</span>
+              <div class="icon">
+                <img src="/public/icons/arrow-down.svg" alt="arrow down icon" />
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <div class="container booking-steps">
+        <div class="booking-steps__left">
+          <section class="first-step">
+            <div class="first-step__content">
+              <img
+                class="first-step__img"
+                src="/public/img/car-touareg.png"
+                alt="Volkswagen Touareg"
+              />
+
+              <article class="first-step__info car-info">
+                <h3 class="car-info__name">Volkswagen Touareg</h3>
+                <p class="car-info__price"><strong>32,98 EUR</strong></p>
+
+                <section class="car-info__included">
+                  <h4 class="car-info__included-title">Included in Price</h4>
+                  <ul class="car-info__included-list">
+                    <li class="car-info__included-line">
+                      <div class="icon" aria-label="Included">
+                        <img
+                          src="/public/icons/check-circle-broken.svg"
+                          alt="check icon"
+                        />
+                      </div>
+                      Airport/City Fee
+                    </li>
+                    <li class="car-info__included-line">
+                      <div class="icon" aria-label="Included">
+                        <img
+                          src="/public/icons/check-circle-broken.svg"
+                          alt="check icon"
+                        />
+                      </div>
+                      Local Tax
+                    </li>
+                    <li class="car-info__included-line">
+                      <div class="icon" aria-label="Included">
+                        <img
+                          src="/public/icons/check-circle-broken.svg"
+                          alt="check icon"
+                        />
+                      </div>
+                      Registration Fee
+                    </li>
+                    <li class="car-info__included-line">
+                      <div class="icon" aria-label="Included">
+                        <img
+                          src="/public/icons/check-circle-broken.svg"
+                          alt="check icon"
+                        />
+                      </div>
+                      Unlimited Mileage
+                    </li>
+                  </ul>
+                </section>
+
+                <section aria-label="Characteristics" class="car-info__chars">
+                  <ul class="car-info__chars-list">
+                    <li class="car-info__chars-item">
+                      <div class="icon" aria-label="Number of doors">
+                        <img
+                          src="/public/icons/car-doors.png"
+                          alt="car with open doors"
+                        />
+                      </div>
+                      5 Doors
+                    </li>
+                    <li class="car-info__chars-item">
+                      <div class="icon" aria-label="Number of suitcases">
+                        <img src="/public/icons/luggage.png" alt="suitcase" />
+                      </div>
+                      3 Suitcase
+                    </li>
+                    <li class="car-info__chars-item">
+                      <div class="icon" aria-label="Transmission type">
+                        <img src="/public/icons/gearbox.png" alt="gearbox" />
+                      </div>
+                      5 Manual
+                    </li>
+                    <li class="car-info__chars-item">
+                      <div class="icon" aria-label="Number of passengers">
+                        <img src="/public/icons/people.png" alt="passengers" />
+                      </div>
+                      5 Passengers
+                    </li>
+                  </ul>
+                </section>
+              </article>
+            </div>
+
+            <button class="button button--light first-step__button">
+              Proceed to Booking
+            </button>
+          </section>
+
+          <section class="booking-steps__step">
+            <h4 class="booking-steps__title">Add on extras</h4>
+
+            <ul class="booking-steps__extra-list" aria-label="Extras">
+              <li class="extra-card extra-card--active second-step__list-item">
+                <div class="extra-card__leftpart">
+                  <div class="icon extra-card__icon">
+                    <div class="extra-card__border extra-card__border--active">
+                      <img src="/public/icons/infinity.png" alt="unlimited" />
+                    </div>
+                  </div>
+                  <div class="extra-card__text">
+                    <h5 class="extra-card__name">Unlimited Mileage</h5>
+                    <span aria-label="Price" class="extra-card__price"
+                      ><strong>15 EUR</strong></span
+                    >
+                  </div>
+                </div>
+
+                <button class="extra-card__button extra-card__button--active">
+                  <img src="/public/icons/minus.svg" alt="minus" />
+                </button>
+              </li>
+
+              <li class="extra-card second-step__list-item">
+                <div class="extra-card__leftpart">
+                  <div class="icon extra-card__icon">
+                    <div class="extra-card__border">
+                      <img src="/public/icons/globe.png" alt="globe" />
+                    </div>
+                  </div>
+                  <div class="extra-card__text">
+                    <h5 class="extra-card__name">Cross-border Fee</h5>
+                    <span aria-label="Price" class="extra-card__price"
+                      ><strong>15 EUR</strong></span
+                    >
+                  </div>
+                </div>
+
+                <button class="extra-card__button">
+                  <img src="/public/icons/plus.svg" alt="plus" />
+                </button>
+              </li>
+
+              <li class="extra-card second-step__list-item">
+                <div class="extra-card__leftpart">
+                  <div class="icon extra-card__icon">
+                    <div class="extra-card__border">
+                      <img src="/public/icons/canister.png" alt="canister" />
+                    </div>
+                  </div>
+                  <div class="extra-card__text">
+                    <h5 class="extra-card__name">Full Tank Service</h5>
+                    <span aria-label="Price" class="extra-card__price"
+                      ><strong>15 EUR</strong></span
+                    >
+                  </div>
+                </div>
+
+                <button class="extra-card__button">
+                  <img src="/public/icons/plus.svg" alt="plus" />
+                </button>
+              </li>
+
+              <li class="extra-card second-step__list-item">
+                <div class="extra-card__leftpart">
+                  <div class="icon extra-card__icon">
+                    <div class="extra-card__border">
+                      <img
+                        src="/public/icons/child-seat.png"
+                        alt="child seat"
+                      />
+                    </div>
+                  </div>
+                  <div class="extra-card__text">
+                    <h5 class="extra-card__name">Child Seat</h5>
+                    <span aria-label="Price" class="extra-card__price"
+                      ><strong>15 EUR</strong></span
+                    >
+                  </div>
+                </div>
+
+                <button class="extra-card__button">
+                  <img src="/public/icons/plus.svg" alt="plus" />
+                </button>
+              </li>
+
+              <li class="extra-card second-step__list-item">
+                <div class="extra-card__leftpart">
+                  <div class="icon extra-card__icon">
+                    <div class="extra-card__border">
+                      <img
+                        src="/public/icons/navigation-pointer.png"
+                        alt="navigator arrow"
+                      />
+                    </div>
+                  </div>
+                  <div class="extra-card__text">
+                    <h5 class="extra-card__name">GPS Navigation System</h5>
+                    <span aria-label="Price" class="extra-card__price"
+                      ><strong>15 EUR</strong></span
+                    >
+                  </div>
+                </div>
+
+                <button class="extra-card__button">
+                  <img src="/public/icons/plus.svg" alt="plus" />
+                </button>
+              </li>
+
+              <li class="extra-card second-step__list-item">
+                <div class="extra-card__leftpart">
+                  <div class="icon extra-card__icon">
+                    <div class="extra-card__border">
+                      <img src="/public/icons/wifi.png" alt="wifi" />
+                    </div>
+                  </div>
+                  <div class="extra-card__text">
+                    <h5 class="extra-card__name">Wi-Fi Hotspot</h5>
+                    <span aria-label="Price" class="extra-card__price"
+                      ><strong>15 EUR</strong></span
+                    >
+                  </div>
+                </div>
+
+                <button class="extra-card__button">
+                  <img src="/public/icons/plus.svg" alt="plus" />
+                </button>
+              </li>
+
+              <li class="extra-card second-step__list-item">
+                <div class="extra-card__leftpart">
+                  <div class="icon extra-card__icon">
+                    <div class="extra-card__border">
+                      <img
+                        src="/public/icons/additional-driver.png"
+                        alt="extra driver"
+                      />
+                    </div>
+                  </div>
+                  <div class="extra-card__text">
+                    <h5 class="extra-card__name">Additional Driver</h5>
+                    <span aria-label="Price" class="extra-card__price"
+                      ><strong>15 EUR</strong></span
+                    >
+                  </div>
+                </div>
+
+                <button class="extra-card__button">
+                  <img src="/public/icons/plus.svg" alt="plus" />
+                </button>
+              </li>
+
+              <li class="extra-card second-step__list-item">
+                <div class="extra-card__leftpart">
+                  <div class="icon extra-card__icon">
+                    <div class="extra-card__border">
+                      <img
+                        src="/public/icons/headphones.png"
+                        alt="headphones"
+                      />
+                    </div>
+                  </div>
+                  <div class="extra-card__text">
+                    <h5 class="extra-card__name">Roadside Waiver</h5>
+                    <span aria-label="Price" class="extra-card__price"
+                      ><strong>15 EUR</strong></span
+                    >
+                  </div>
+                </div>
+
+                <button class="extra-card__button">
+                  <img src="/public/icons/plus.svg" alt="plus" />
+                </button>
+              </li>
+            </ul>
+          </section>
+
+          <section class="booking-steps__step">
+            <h4 class="booking-steps__title">Insurance</h4>
+
+            <div class="booking-steps__insurance-list">
+              <section class="insurance-card">
+                <div>
+                  <h5 class="insurance-card__name">No Insurance</h5>
+                  <span aria-label="Price" class="insurance-card__price"
+                    ><strong>Free</strong></span
+                  >
+                </div>
+                <section class="insurance-card__text-wrapper">
+                  <p>Important Notice:</p>
+                  <div class="insurance-card__icon-and-text">
+                    <img src="/public/icons/alert-circle.svg" alt="warning" />
+                    &nbsp;
+                    <p>
+                      You are fully responsible for any damage to the vehicle.
+                    </p>
+                  </div>
+                  <div class="insurance-card__icon-and-text">
+                    <img src="/public/icons/alert-circle.svg" alt="warning" />
+                    &nbsp;
+                    <p>
+                      Full repair costs will be charged in case of an accident
+                      or damage (no financial limit).
+                    </p>
+                  </div>
+                </section>
+                <p class="insurance-card__recommendation">
+                  <small>
+                    We strongly recommend choosing one of the insurance options
+                    to ensure a worry-free journey.
+                  </small>
+                </p>
+              </section>
+
+              <section class="insurance-card insurance-card--active">
+                <div>
+                  <h5 class="insurance-card__name">Basic Insurance</h5>
+                  <span aria-label="Price" class="insurance-card__price"
+                    ><strong>15 EUR/day</strong></span
+                  >
+                </div>
+                <section class="insurance-card__text-wrapper">
+                  <div class="insurance-card__icon-and-text">
+                    <img
+                      src="/public/icons/check-circle-broken.svg"
+                      alt="warning"
+                    />
+                    &nbsp;
+                    <p>
+                      Coverage for vehicle damage in case of an accident (with
+                      excess).
+                    </p>
+                  </div>
+                  <div class="insurance-card__icon-and-text">
+                    <img
+                      src="/public/icons/check-circle-broken.svg"
+                      alt="warning"
+                    />
+                    &nbsp;
+                    <p>Limited financial liability with a deductible/excess.</p>
+                  </div>
+                  <div class="insurance-card__icon-and-text">
+                    <img
+                      src="/public/icons/check-circle-broken.svg"
+                      alt="warning"
+                    />
+                    &nbsp;
+                    <p>
+                      Partial coverage for car body damages (does not cover
+                      tires, windows, roof, or undercarriage).
+                    </p>
+                  </div>
+                </section>
+              </section>
+
+              <section class="insurance-card">
+                <div>
+                  <h5 class="insurance-card__name">Comprehensive Insurance</h5>
+                  <span aria-label="Price" class="insurance-card__price"
+                    ><strong>25 EUR/day</strong></span
+                  >
+                </div>
+                <section class="insurance-card__text-wrapper">
+                  <div class="insurance-card__icon-and-text">
+                    <img
+                      src="/public/icons/check-circle-broken-green.png"
+                      alt="warning"
+                    />
+                    &nbsp;
+                    <p>
+                      Full coverage for all damages (including tires, windows,
+                      roof, and undercarriage).
+                    </p>
+                  </div>
+                  <div class="insurance-card__icon-and-text">
+                    <img
+                      src="/public/icons/check-circle-broken-green.png"
+                      alt="warning"
+                    />
+                    &nbsp;
+                    <p>Theft protection.</p>
+                  </div>
+                  <div class="insurance-card__icon-and-text">
+                    <img
+                      src="/public/icons/check-circle-broken-green.png"
+                      alt="warning"
+                    />
+                    &nbsp;
+                    <p>No deductible/excess (or minimal excess).</p>
+                  </div>
+                  <div class="insurance-card__icon-and-text">
+                    <img
+                      src="/public/icons/check-circle-broken-green.png"
+                      alt="warning"
+                    />
+                    &nbsp;
+                    <p>
+                      Roadside assistance in case of breakdowns or accidents.
+                    </p>
+                  </div>
+                </section>
+              </section>
+            </div>
+          </section>
+        </div>
+
+        <form
+          action="GET"
+          onsubmit="event.preventDefault(); this.reset()"
+          class="booking-form booking-steps__right"
+        >
+          <h4 class="booking-steps__title">Confirming Order</h4>
+
+          <div class="booking-form__inputs">
+            <label class="form-label">
+              <span>
+                First Name <span class="form-label__required">*</span>
+              </span>
+              <input
+                type="text"
+                id="first-name"
+                name="first-name"
+                placeholder="Enter Your First Name"
+                class="form-label__input"
+              />
+            </label>
+
+            <label class="form-label">
+              <span>
+                Last Name <span class="form-label__required">*</span>
+              </span>
+              <input
+                type="text"
+                id="last-name"
+                name="last-name"
+                placeholder="Enter Your Last Name"
+                class="form-label__input"
+              />
+            </label>
+
+            <label class="form-label">
+              <span> Email <span class="form-label__required">*</span> </span>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="olivia@untitledui.com"
+                class="form-label__input"
+              />
+            </label>
+
+            <label class="form-label">
+              <span>
+                Phone number <span class="form-label__required">*</span>
+              </span>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+1 (555) 000-0000"
+                class="form-label__input"
+              />
+            </label>
+          </div>
+
+          <section
+            aria-label="order details"
+            class="order-details booking-form__details"
+          >
+            <dl class="order-details__content">
+              <div class="order-details__line" aria-label="date">
+                <dt>Date</dt>
+                <dd>Jan 1 | 08:00 - Jan 2 | 20:00</dd>
+              </div>
+              <div class="order-details__line" aria-label="location">
+                <dt>Location</dt>
+                <dd>Bratislava Bus... - Bratislava Bus...</dd>
+              </div>
+              <div class="order-details__line" aria-label="car and price">
+                <dt>Volkswagen Touareg</dt>
+                <dd>32,98 EUR</dd>
+              </div>
+              <div class="order-details__line" aria-label="insurance type">
+                <dt>Basic Insurance</dt>
+                <dd>15 EUR</dd>
+              </div>
+
+              <div class="order-details__total" aria-label="total">
+                <dt><strong>Total</strong></dt>
+                <dd><strong>62,98 EUR</strong></dd>
+              </div>
+            </dl>
+          </section>
+
+          <div class="booking-form__accept-terms">
+            <input
+              type="checkbox"
+              id="terms"
+              name="terms"
+              value="accept"
+              class="booking-form__checkbox"
+            />
+            <label for="terms">I accept the terms & conditions</label>
+          </div>
+
+          <div class="booking-form__buttons">
+            <button class="button button--dark booking-form__button">
+              Pay Cash
+            </button>
+            <button class="button button--light booking-form__button">
+              Pay Card
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <section class="contact-us">
+        <div class="container">
+          <div class="contact-us__content">
+            <img
+              src="/public/img/avatar-group.png"
+              alt="Avatars of experts"
+              class="contact-us__avatars"
+            />
+            <h3 class="contact-us__title">Still have questions?</h3>
+            <p class="contact-us__text">
+              Can’t find the answer you’re looking for? Please chat to our
+              friendly team.
+            </p>
+            <button class="button button--light contact-us__button">
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="container">
+      <footer class="footer">
+        <div class="footer__top">
+          <div class="footer__logo-and-text">
+            <a href="#" class="logo logo--footer">
+              <img
+                src="../public/img/logo.png"
+                alt="flexicar logo"
+                class="logo__img"
+              />
+            </a>
+            <p>Your Trusted Ride Awaits</p>
+          </div>
+
+          <form
+            class="footer__form"
+            onsubmit="event.preventDefault(); this.reset()"
+          >
+            <label for="email" class="form-label footer__label">
+              Stay up to date
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                class="form-label__input footer__input"
+              />
+            </label>
+
+            <button type="submit" class="button button--dark footer__button">
+              Subscribe
+            </button>
+          </form>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© Frontend implemented by Maksym Mohyla.</p>
+          <nav>
+            <ul class="footer__navlist">
+              <li><a href="#">Terms</a></li>
+              <li><a href="#">Privacy</a></li>
+              <li><a href="#">Cookies</a></li>
+            </ul>
+          </nav>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

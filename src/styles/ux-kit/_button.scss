@@ -1,0 +1,14 @@
+@use '../utils/mixins' as *;
+@use '../utils/variables' as *;
+
+.button {
+  border-radius: $border-input-radius;
+  color: $text-color-main;
+
+  &--dark {
+    background-color: $button-color-dark;
+  }
+  &--light {
+    background-color: $button-color-light;
+  }
+}

@@ -1,0 +1,63 @@
+@use './utils/mixins' as *;
+@use './utils/variables' as *;
+
+.booking-steps {
+  @include on-desktop {
+    display: flex;
+    gap: 48px;
+    margin: 40px 0 120px;
+  }
+
+  // #region left-steps
+  &__left {
+    @include on-desktop {
+      background-color: $background-secondary;
+      border-radius: 16px;
+      padding: 48px 24px;
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+
+  &__step {
+    display: none;
+    @include on-desktop {
+      display: block;
+      color: $text-color-main;
+      padding-top: 16px;
+      border-top: $border-classic;
+    }
+  }
+
+  &__extra-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 16px;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 24px;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 32px;
+  }
+
+  &__insurance-list {
+    display: flex;
+    gap: 16px;
+  }
+  // #endregion left-steps
+
+  &__right {
+    display: none;
+    @include on-desktop {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 30%;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@use './utils/variables' as *;
+@use './utils/mixins' as *;
+
+.booking-form {
+  color: $text-color-main;
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__details {
+    margin-bottom: 32px;
+  }
+
+  &__accept-terms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__checkbox {
+    appearance: none; // to customize the checkbox firstly we need to remove the default styles
+    width: 20px;
+    height: 20px;
+    background-color: $button-color-light;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:checked::before {
+      content: '\2713'; // check unicode
+      color: $text-color-main;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 24px;
+  }
+  &__button {
+    padding-block: 19px;
+    flex-grow: 1;
+  }
+}

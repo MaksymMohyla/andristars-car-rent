@@ -1,0 +1,43 @@
+@use './utils/mixins' as *;
+@use './utils/variables' as *;
+
+.insurance-card {
+  background-color: $background-insurance;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+
+  &--active {
+    background-color: $background-insurance-active;
+  }
+
+  &__name {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+  &__price {
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+  }
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  &__icon-and-text {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__recommendation {
+    font-size: 0.75rem;
+    color: #656566;
+    font-weight: 300;
+    line-height: 140%;
+  }
+}

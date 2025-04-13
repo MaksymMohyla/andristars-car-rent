@@ -1,0 +1,43 @@
+@use './utils/mixins' as *;
+@use './utils/variables' as *;
+
+.contact-us {
+  padding-block: 80px;
+  background-image: url('/public/img/contact-us-background-mob.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 20% 50%;
+
+  @include on-tablet {
+    background-size: 175%;
+    background-position: 6% 60%;
+  }
+
+  &__content {
+    color: $text-color-main;
+    padding: 31px 32px 40px;
+    text-align: center;
+
+    @include on-tablet {
+      padding-inline: 0;
+      text-align: left;
+    }
+    @include on-desktop {
+      padding-inline: 32px;
+    }
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 32px;
+  }
+  &__text {
+    margin-top: 8px;
+  }
+
+  &__button {
+    padding: 13px 28px;
+    margin-top: 32px;
+  }
+}

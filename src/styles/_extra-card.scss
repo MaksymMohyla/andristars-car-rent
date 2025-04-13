@@ -1,0 +1,58 @@
+@use './utils/mixins' as *;
+@use './utils/variables' as *;
+
+$vertical-padding: 8px;
+$border-radius: 8px;
+
+.extra-card {
+  background-color: $background-extra-main;
+  border-radius: $border-radius;
+  display: flex;
+  justify-content: space-between;
+
+  &--active {
+    background-color: $background-extra-active-main;
+  }
+
+  &__leftpart {
+    display: flex;
+  }
+
+  &__icon {
+    width: fit-content;
+    padding-block: $vertical-padding;
+  }
+  &__border {
+    height: 100%;
+    border-right: $border-classic;
+    padding-inline: 8px;
+
+    &--active {
+      border-right-color: $background-extra-active-second;
+    }
+  }
+
+  &__text {
+    padding-block: $vertical-padding;
+    padding-inline: 16px;
+  }
+  &__name {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 32px;
+  }
+  &__price {
+    font-size: 1.25rem;
+  }
+
+  &__button {
+    background-color: $background-extra-second;
+    padding-inline: 6px;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+
+    &--active {
+      background-color: $background-extra-active-second;
+    }
+  }
+}

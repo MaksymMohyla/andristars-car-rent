@@ -1,0 +1,18 @@
+.icon {
+  background-color: transparent;
+
+  &--button {
+    cursor: pointer;
+    padding-left: 12px;
+    &::after {
+      // to add clickable area
+      content: '';
+      display: block;
+      width: 12px;
+      height: 100%;
+      position: absolute;
+      right: -12px;
+    }
+    position: relative;
+  }
+}

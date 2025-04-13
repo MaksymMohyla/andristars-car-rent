@@ -1,0 +1,66 @@
+@use './utils/mixins' as *;
+@use './utils/variables' as *;
+
+.car-info {
+  &__name {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    @include on-desktop {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__price {
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+    @include on-desktop {
+      font-size: 1.5rem;
+      margin-bottom: 32px;
+    }
+  }
+
+  &__included {
+    margin-bottom: 32px;
+  }
+
+  &__included-title {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    @include on-desktop {
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__included-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.875rem;
+    @include on-desktop {
+      gap: 8px;
+    }
+  }
+
+  &__included-line {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__chars-list {
+    font-size: 0.875rem;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-auto-columns: min-content;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 8px;
+  }
+  &__chars-item {
+    display: flex;
+    gap: 8px;
+  }
+}

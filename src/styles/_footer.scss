@@ -1,0 +1,81 @@
+@use './utils/mixins' as *;
+@use './utils/variables' as *;
+
+$input-height: 44px;
+$input-height-tablet: 48px;
+
+@mixin footer-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @include on-tablet {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-between;
+  }
+}
+
+.footer {
+  color: $text-color-secondary;
+  line-height: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  padding: 40px 0;
+  @include font-size;
+
+  @include on-tablet {
+    gap: 64px;
+    padding: 64px 0 48px;
+  }
+
+  &__top {
+    @include footer-content-wrapper;
+  }
+
+  &__logo-and-text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__form {
+    display: flex;
+    gap: 16px;
+    @include on-tablet {
+      min-width: 390px;
+    }
+    @include on-desktop {
+      min-width: 460px;
+    }
+  }
+  &__label {
+    flex-grow: 1;
+  }
+  &__input {
+    height: $input-height;
+    @include on-tablet {
+      height: $input-height-tablet;
+    }
+  }
+  &__button {
+    width: 30%;
+    align-self: flex-end;
+    height: $input-height;
+    @include on-tablet {
+      height: $input-height-tablet;
+    }
+  }
+
+  &__bottom {
+    border-top: $border-classic;
+    padding-top: 32px;
+    @include footer-content-wrapper;
+  }
+
+  &__navlist {
+    display: flex;
+    gap: 16px;
+  }
+}

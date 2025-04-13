@@ -1,0 +1,64 @@
+@use './utils/mixins' as *;
+@use './utils/variables' as *;
+
+.header {
+  background-color: $background-secondary;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left-container {
+    display: flex;
+    gap: 84px;
+  }
+
+  &__nav {
+    display: none;
+    @include on-desktop {
+      display: block;
+    }
+  }
+
+  &__right-container {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__language {
+    display: none;
+
+    @include on-desktop {
+      @include header-icon-group;
+      background-color: transparent;
+      line-height: 0.8rem;
+    }
+  }
+
+  &__phone {
+    display: none;
+
+    @include on-tablet {
+      @include header-icon-group;
+      line-height: 1rem;
+    }
+  }
+
+  &__burger {
+    @include on-desktop {
+      display: none;
+    }
+  }
+
+  &__signin {
+    display: none;
+
+    @include on-desktop {
+      @include header-icon-group;
+      font-size: 1rem;
+      line-height: 1rem;
+      background-color: transparent;
+    }
+  }
+}
