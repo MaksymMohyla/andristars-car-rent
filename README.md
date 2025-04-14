@@ -1,5 +1,7 @@
 # Landing Page Project
 
+[**Live Demo**](https://maksymmohyla.github.io/andristars-car-rent/)
+
 This is a responsive landing page built using **HTML**, **CSS**, and **JavaScript**. The project demonstrates clean and modular code structure, focusing on modern web development best practices.
 
 ## Features
