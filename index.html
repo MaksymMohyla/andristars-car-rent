@@ -58,9 +58,9 @@
           <button class="header__language">
             EN
             <span>&nbsp;</span>
-            <div class="icon">
+            <span class="icon">
               <img src="./public/icons/arrow-down.svg" alt="arrow down icon" />
-            </div>
+            </span>
           </button>
 
           <a href="tel:+1234567890" class="header__phone">
@@ -80,9 +80,9 @@
           </button>
 
           <button class="header__signin">
-            <div class="icon">
+            <span class="icon">
               <img src="./public/icons/signin.svg" alt="sign in icon" />
-            </div>
+            </span>
             <span>&nbsp;</span>
             Sign in
           </button>
@@ -149,12 +149,12 @@
             <button class="menu__language">
               EN
               <span>&nbsp;</span>
-              <div class="icon">
+              <span class="icon">
                 <img
                   src="./public/icons/arrow-down.svg"
                   alt="arrow down icon"
                 />
-              </div>
+              </span>
             </button>
           </div>
         </div>
@@ -713,11 +713,10 @@
             class="footer__form"
             onsubmit="event.preventDefault(); this.reset()"
           >
-            <label for="email" class="form-label footer__label">
+            <label class="form-label footer__label">
               Stay up to date
               <input
                 type="email"
-                id="email"
                 name="email"
                 placeholder="Enter your email"
                 class="form-label__input footer__input"

@@ -5,7 +5,8 @@
   @include on-desktop {
     display: flex;
     gap: 48px;
-    margin: 40px 0 120px;
+    margin-top: 40px;
+    margin-bottom: 120px;
   }
 
   // #region left-steps
